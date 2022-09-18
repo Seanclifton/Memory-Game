@@ -16,12 +16,12 @@ function shuffle(arr) {
   return arr;
 }
 
-
 //called outside of app function so not re-set on re-render
 let choiceNumber = 1;
 let firstChoice = "";
 let secondChoice = "";
 let showButton = true;
+let allowClick = false;
 
 export default function App() {
   const suits = ["♠︎", "♥︎", "♣︎", "♦︎"];
@@ -72,13 +72,14 @@ export default function App() {
   const [turn, setTurn] = useState(0);
 
   function selectCard(item) {
-    if (choiceNumber === 1) {
+    if (allowClick && choiceNumber === 1) {
       firstChoice = item;
       let prevDeck = [...cardDeck];
       prevDeck[prevDeck.indexOf(firstChoice)].found = true;
       setCardDeck([...prevDeck]);
       choiceNumber++;
-    } else if (choiceNumber === 2) {
+    } else if (allowClick && choiceNumber === 2) {
+        allowClick = false
       secondChoice = item;
       if (firstChoice.val === secondChoice.val) {
         setTurn((turn) => turn + 1);
@@ -86,6 +87,7 @@ export default function App() {
         prevDeck[prevDeck.indexOf(secondChoice)].found = true;
         setCardDeck([...prevDeck]);
         choiceNumber--;
+        allowClick = true
       } else {
         setTurn((turn) => turn + 1);
         let prevDeck = [...cardDeck];
@@ -98,6 +100,7 @@ export default function App() {
           firstChoice = "";
           secondChoice = "";
           choiceNumber--;
+          allowClick = true
         }, 3000);
       }
     }
@@ -119,7 +122,7 @@ export default function App() {
 
   //start button that shuffles the cards, shows them for 5 seconds then flips them. button only shows until clicked.
   function handleStart() {
-    showButton = false
+    showButton = false;
     let preShuffle = [...cardDeck];
     shuffle(preShuffle);
     setCardDeck([...preShuffle]);
@@ -127,6 +130,7 @@ export default function App() {
       let preFlip = [...preShuffle];
       preFlip = preFlip.map((card) => ({ ...card, found: !card.found }));
       setCardDeck([...preFlip]);
+      allowClick = true
     }, 5000);
   }
 

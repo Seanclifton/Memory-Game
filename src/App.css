@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(3, 81, 3);
+  background-color: rgb(3, 81, 3);
   color: black;
 }
 
@@ -10,114 +10,127 @@ body {
 
 /* sets card color based on suit */
 .suits♥︎ {
-    background-color: white;
-    border-style: solid;
-    border-width: thin;
-    padding: 10px;
-    margin: 10px;
-    width: 100px;
-    height: 160px;
-    border-radius: 10px;
-    display: flex;
-    position: relative;
-    color: red;
-    border-color: white;
-    box-shadow: 1px 1px #888888;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 160px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  color: red;
+  border-color: white;
+  box-shadow: 1px 1px #888888;
 }
 
 .suits♣︎ {
-    background-color: white;
-    border-style: solid;
-    border-width: thin;
-    padding: 10px;
-    margin: 10px;
-    width: 100px;
-    height: 160px;
-    border-radius: 10px;
-    display: flex;
-    position: relative;
-    color: black;
-    border-color: white;
-    box-shadow: 1px 1px #888888;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 160px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  color: black;
+  border-color: white;
+  box-shadow: 1px 1px #888888;
 }
 
 .suits♦︎ {
-    background-color: white;
-    border-style: solid;
-    border-width: thin;
-    padding: 10px;
-    margin: 10px;
-    width: 100px;
-    height: 160px;
-    border-radius: 10px;
-    display: flex;
-    position: relative;
-    color: red;
-    border-color: white;
-    box-shadow: 1px 1px #888888;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 160px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  color: red;
+  border-color: white;
+  box-shadow: 1px 1px #888888;
 }
 
 .suits♠︎ {
-    background-color: white;
-    border-style: solid;
-    border-width: thin;
-    padding: 10px;
-    margin: 10px;
-    width: 100px;
-    height: 160px;
-    border-radius: 10px;
-    display: flex;
-    position: relative;
-    color: black;
-    border-color: white;
-    box-shadow: 1px 1px #888888;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 160px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  color: black;
+  border-color: white;
+  box-shadow: 1px 1px #888888;
 }
 
 /* positioning for all texts and symbols on card */
 .val1 {
-    position: absolute;
-    left: 5px;
-    top: 5px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 
 .val2 {
-    position: absolute;
-    right: 5px;
-    top: 5px
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .val3 {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    transform: scale(-1, -1);
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  transform: scale(-1, -1);
 }
 
 .val4 {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    transform: scale(-1, -1);
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  transform: scale(-1, -1);
 }
 
 .suit {
-    font-size: 80px;
-    margin: auto;
+  font-size: 80px;
+  margin: auto;
 }
 
 /* styling for blank faced card */
 .blank {
-    background-color: black;
-    border-style: solid;
-    border-width: thin;
-    padding: 10px;
-    margin: 10px;
-    width: 100px;
-    height: 160px;
-    border-radius: 10px;
-    display: flex;
-    position: relative;
-    color: black;
-    border-color: black;
-    box-shadow: 1px 1px #888888;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    black 3px,
+    black 4px
+  ),
+  repeating-linear-gradient(
+    135deg,
+    grey,
+    grey 3px,
+    black 3px,
+    black 4px
+  );
+  border-style: solid;
+  border-width: thick;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 160px;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  color: black;
+  border-color: grey;
+  box-shadow: 1px 1px #282828;
 }
