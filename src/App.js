@@ -1,3 +1,5 @@
+//make so cant select new card until old ones flipped back over as glitches game
+
 import { useState, useEffect, useRef } from "react";
 import Card from "./components/Card";
 import "./App.css";
@@ -14,16 +16,17 @@ function shuffle(arr) {
   return arr;
 }
 
+
+//called outside of app function so not re-set on re-render
 let choiceNumber = 1;
 let firstChoice = "";
 let secondChoice = "";
-let showButton = true
+let showButton = true;
 
 export default function App() {
   const suits = ["♠︎", "♥︎", "♣︎", "♦︎"];
   const values = [
     "A",
-    "1",
     "2",
     "3",
     "4",
@@ -65,8 +68,7 @@ export default function App() {
   //turn is stored in state  so we can have a counter at the bottom that updates state.
   //the items value property is stored and will be compared later to confirm if match.
   //choice number is incremented up and down between first and second choice.
-  //let firstChoice = "";
-  /* let secondChoice = ""; */
+
   const [turn, setTurn] = useState(0);
 
   function selectCard(item) {
@@ -101,39 +103,45 @@ export default function App() {
     }
   }
 
+  //button used during development
   function handleShuffleClick() {
     let preShuffle = [...cardDeck];
     shuffle(preShuffle);
     setCardDeck([...preShuffle]);
   }
 
+  //button used during development
   function handleFlip() {
     let preFlip = [...cardDeck];
     preFlip = preFlip.map((card) => ({ ...card, found: !card.found }));
     setCardDeck([...preFlip]);
   }
 
-
-  
+  //start button that shuffles the cards, shows them for 5 seconds then flips them. button only shows until clicked.
   function handleStart() {
-    handleShuffleClick();
     showButton = false
+    let preShuffle = [...cardDeck];
+    shuffle(preShuffle);
+    setCardDeck([...preShuffle]);
     setTimeout(function () {
-      handleFlip();
-    }, 3000);
+      let preFlip = [...preShuffle];
+      preFlip = preFlip.map((card) => ({ ...card, found: !card.found }));
+      setCardDeck([...preFlip]);
+    }, 5000);
   }
 
   //we feed the cardDeck array of values to the card component to render a deck of cards on screen.
   //can either show face or be blank dependent on found value.
-  //handleClick function on each card for the selectCard function
-  //button to trigger the shuffle function and a counter of turns added at bottom
+  //handleClick function on each card for the selectCard function used during development
+  //button to trigger the shuffle function and a counter of turns added at bottom used during development
+  //start button only shows until clicked
   return (
     <>
-    {showButton &&
-      <button type="button" onClick={handleStart}>
-        start
-      </button>
-}
+      {showButton && (
+        <button type="button" onClick={handleStart}>
+          start
+        </button>
+      )}
       <div className="cardContainer">
         {cardDeck.map((item) => (
           <Card
@@ -145,11 +153,10 @@ export default function App() {
           />
         ))}
       </div>
-      {/* <button type="button" onClick={() => setCardDeck(shuffle(cardDeckCopy))}> */}
       {/* <button type="button" onClick={handleShuffleClick}>
         shuffle
-      </button> */}
-      {/* <button type="button" onClick={handleFlip}>
+      </button>
+      <button type="button" onClick={handleFlip}>
         flip
       </button> */}
       <h3>You have used {turn} turns.</h3>
