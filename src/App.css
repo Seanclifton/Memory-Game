@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+body {
+    background-color:rgb(3, 81, 3);
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+/* sets card color based on suit */
+.suits♥︎ {
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    color: red;
+    border-color: white;
+    box-shadow: 1px 1px #888888;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.suits♣︎ {
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    color: black;
+    border-color: white;
+    box-shadow: 1px 1px #888888;
+}
+
+.suits♦︎ {
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    color: red;
+    border-color: white;
+    box-shadow: 1px 1px #888888;
+}
+
+.suits♠︎ {
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    color: black;
+    border-color: white;
+    box-shadow: 1px 1px #888888;
+}
+
+/* positioning for all texts and symbols on card */
+.val1 {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.val2 {
+    position: absolute;
+    right: 5px;
+    top: 5px
+}
+
+.val3 {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    transform: scale(-1, -1);
+}
+
+.val4 {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    transform: scale(-1, -1);
+}
+
+.suit {
+    font-size: 80px;
+    margin: auto;
+}
+
+/* styling for blank faced card */
+.blank {
+    background-color: black;
+    border-style: solid;
+    border-width: thin;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    color: black;
+    border-color: black;
+    box-shadow: 1px 1px #888888;
 }
