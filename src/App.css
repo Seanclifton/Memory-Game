@@ -12,7 +12,7 @@ body {
 .suits♥︎ {
   background-color: white;
   border-style: solid;
-  border-width: thin;
+  border-width: thick;
   padding: 10px;
   margin: 10px;
   width: 100px;
@@ -28,7 +28,7 @@ body {
 .suits♣︎ {
   background-color: white;
   border-style: solid;
-  border-width: thin;
+  border-width: thick;
   padding: 10px;
   margin: 10px;
   width: 100px;
@@ -44,7 +44,7 @@ body {
 .suits♦︎ {
   background-color: white;
   border-style: solid;
-  border-width: thin;
+  border-width: thick;
   padding: 10px;
   margin: 10px;
   width: 100px;
@@ -60,7 +60,7 @@ body {
 .suits♠︎ {
   background-color: white;
   border-style: solid;
-  border-width: thin;
+  border-width: thick;
   padding: 10px;
   margin: 10px;
   width: 100px;
@@ -112,11 +112,11 @@ body {
     transparent,
     transparent 3px,
     black 3px,
-    black 4px
+    blue 4px
   ),
   repeating-linear-gradient(
     135deg,
-    grey,
+    white,
     grey 3px,
     black 3px,
     black 4px
@@ -131,6 +131,6 @@ body {
   display: flex;
   position: relative;
   color: black;
-  border-color: grey;
+  border-color: white;
   box-shadow: 1px 1px #282828;
 }

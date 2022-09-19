@@ -1,4 +1,5 @@
-//make so cant select new card until old ones flipped back over as glitches game
+//put in css grid and make responsive
+//add a backend
 
 import { useState, useEffect, useRef } from "react";
 import Card from "./components/Card";
@@ -22,12 +23,13 @@ let firstChoice = "";
 let secondChoice = "";
 let showButton = true;
 let allowClick = false;
+let score = 0;
 
 export default function App() {
   const suits = ["♠︎", "♥︎", "♣︎", "♦︎"];
   const values = [
     "A",
-    "2",
+  /*   "2",
     "3",
     "4",
     "5",
@@ -38,7 +40,7 @@ export default function App() {
     "10",
     "J",
     "Q",
-    "K",
+    "K", */
   ];
 
   //creates an array of card objects with assigned values
@@ -72,13 +74,13 @@ export default function App() {
   const [turn, setTurn] = useState(0);
 
   function selectCard(item) {
-    if (allowClick && choiceNumber === 1) {
+    if (allowClick && !item.found && choiceNumber === 1) {
       firstChoice = item;
       let prevDeck = [...cardDeck];
       prevDeck[prevDeck.indexOf(firstChoice)].found = true;
       setCardDeck([...prevDeck]);
       choiceNumber++;
-    } else if (allowClick && choiceNumber === 2) {
+    } else if (allowClick && !item.found && choiceNumber === 2) {
         allowClick = false
       secondChoice = item;
       if (firstChoice.val === secondChoice.val) {
@@ -88,6 +90,10 @@ export default function App() {
         setCardDeck([...prevDeck]);
         choiceNumber--;
         allowClick = true
+        score++
+        if (score >= (prevDeck.length / 2)) {
+            console.log('winner')
+        }
       } else {
         setTurn((turn) => turn + 1);
         let prevDeck = [...cardDeck];
@@ -101,7 +107,7 @@ export default function App() {
           secondChoice = "";
           choiceNumber--;
           allowClick = true
-        }, 3000);
+        }, 700);
       }
     }
   }
@@ -122,6 +128,8 @@ export default function App() {
 
   //start button that shuffles the cards, shows them for 5 seconds then flips them. button only shows until clicked.
   function handleStart() {
+    setTurn(prev => 0)
+    score = 0;
     showButton = false;
     let preShuffle = [...cardDeck];
     shuffle(preShuffle);
@@ -144,6 +152,11 @@ export default function App() {
       {showButton && (
         <button type="button" onClick={handleStart}>
           start
+        </button>
+      )}
+      {score >= (cardDeckCopy.length / 2) && (
+        <button type="button" onClick={handleStart}>
+          winner
         </button>
       )}
       <div className="cardContainer">
