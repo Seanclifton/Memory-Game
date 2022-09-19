@@ -4,133 +4,116 @@ body {
 }
 
 .cardContainer {
-  display: flex;
-  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1vh;
+  grid-template-columns: repeat(13, 1fr);
 }
 
 /* sets card color based on suit */
 .suits♥︎ {
   background-color: white;
-  border-style: solid;
-  border-width: thick;
-  padding: 10px;
-  margin: 10px;
-  width: 100px;
-  height: 160px;
-  border-radius: 10px;
+  width: 10vh;
+  height: 18vh;
+  font-size: 3vh;
+  border-radius: 1vh;
   display: flex;
   position: relative;
   color: red;
   border-color: white;
-  box-shadow: 1px 1px #888888;
+  box-shadow: 0.1vh 0.1vh #888888;
 }
 
 .suits♣︎ {
   background-color: white;
-  border-style: solid;
-  border-width: thick;
-  padding: 10px;
-  margin: 10px;
-  width: 100px;
-  height: 160px;
-  border-radius: 10px;
+  width: 10vh;
+  height: 18vh;
+  font-size: 3vh;
+  border-radius: 1vh;
   display: flex;
   position: relative;
   color: black;
   border-color: white;
-  box-shadow: 1px 1px #888888;
+  box-shadow: 0.1vh 0.1vh #888888;
 }
 
 .suits♦︎ {
   background-color: white;
-  border-style: solid;
-  border-width: thick;
-  padding: 10px;
-  margin: 10px;
-  width: 100px;
-  height: 160px;
-  border-radius: 10px;
+  width: 10vh;
+  height: 18vh;
+  font-size: 3vh;
+  border-radius: 1vh;
   display: flex;
   position: relative;
   color: red;
   border-color: white;
-  box-shadow: 1px 1px #888888;
+  box-shadow: 0.1vh 0.1vh #888888;
 }
 
 .suits♠︎ {
   background-color: white;
-  border-style: solid;
-  border-width: thick;
-  padding: 10px;
-  margin: 10px;
-  width: 100px;
-  height: 160px;
-  border-radius: 10px;
+  width: 10vh;
+  height: 18vh;
+  font-size: 3vh;
+  border-radius: 1vh;
   display: flex;
   position: relative;
   color: black;
   border-color: white;
-  box-shadow: 1px 1px #888888;
+  box-shadow: 0.1vh 0.1vh #888888;
 }
 
 /* positioning for all texts and symbols on card */
 .val1 {
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 0.5vh;
+  top: 0.5vh;
 }
 
 .val2 {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 0.5vh;
+  top: 0.5vh;
 }
 
 .val3 {
   position: absolute;
-  left: 5px;
-  bottom: 5px;
+  left: 0.5vh;
+  bottom: 0.5vh;
   transform: scale(-1, -1);
 }
 
 .val4 {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 0.5vh;
+  bottom: 0.5vh;
   transform: scale(-1, -1);
 }
 
 .suit {
-  font-size: 80px;
+  font-size: 5vh;
   margin: auto;
 }
 
 /* styling for blank faced card */
 .blank {
   background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 3px,
-    black 3px,
-    blue 4px
-  ),
-  repeating-linear-gradient(
-    135deg,
-    white,
-    grey 3px,
-    black 3px,
-    black 4px
-  );
-  border-style: solid;
-  border-width: thick;
-  padding: 10px;
-  margin: 10px;
-  width: 100px;
-  height: 160px;
-  border-radius: 10px;
+      45deg,
+      transparent,
+      transparent 3px,
+      black 3px,
+      blue 4px
+    ),
+    repeating-linear-gradient(135deg, white, grey 3px, black 3px, black 4px);
+  width: 10vh;
+  height: 18vh;
   display: flex;
   position: relative;
   color: black;
+  box-shadow: 0.1vh 0.1vh #888888;
+  outline: 1vh solid white;
+  outline-offset: -1vh;
   border-color: white;
-  box-shadow: 1px 1px #282828;
+  border-radius: 1vh;
 }

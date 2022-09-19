@@ -29,7 +29,7 @@ export default function App() {
   const suits = ["♠︎", "♥︎", "♣︎", "♦︎"];
   const values = [
     "A",
-  /*   "2",
+    "2",
     "3",
     "4",
     "5",
@@ -40,7 +40,7 @@ export default function App() {
     "10",
     "J",
     "Q",
-    "K", */
+    "K",
   ];
 
   //creates an array of card objects with assigned values
