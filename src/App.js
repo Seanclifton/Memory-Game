@@ -1,4 +1,7 @@
 //put in css grid and make responsive
+//make start buton and winner button look better
+//add fireworks at end
+//add card flip animation
 //add a backend
 
 import { useState, useEffect, useRef } from "react";
@@ -148,17 +151,18 @@ export default function App() {
   //button to trigger the shuffle function and a counter of turns added at bottom used during development
   //start button only shows until clicked
   return (
-    <>
+    <div className="container">
       {showButton && (
-        <button type="button" onClick={handleStart}>
-          start
+        <button type="button" onClick={handleStart} className='startButton'>
+          START GAME
         </button>
       )}
       {score >= (cardDeckCopy.length / 2) && (
-        <button type="button" onClick={handleStart}>
-          winner
+        <button type="button" onClick={handleStart} className='winnerButton'>
+          WINNER!!! TRY AGAIN?
         </button>
       )}
+      <h3 className="turns">Find matching numbers to win. You have used {turn} turns.</h3>
       <div className="cardContainer">
         {cardDeck.map((item) => (
           <Card
@@ -176,7 +180,6 @@ export default function App() {
       <button type="button" onClick={handleFlip}>
         flip
       </button> */}
-      <h3>You have used {turn} turns.</h3>
-    </>
+    </div>
   );
 }

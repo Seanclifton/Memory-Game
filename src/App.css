@@ -3,96 +3,108 @@ body {
   color: black;
 }
 
+
+  .container {
+    /* margin: auto; */
+  }
+
+  @media (orientation: portrait) {
+    .container {
+        transform: rotate(-90deg);
+        margin-top: 30vmax;
+    }
+  }
+
 .cardContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
   display: grid;
-  gap: 1vh;
+  gap: 0.5vmax;
   grid-template-columns: repeat(13, 1fr);
 }
+
 
 /* sets card color based on suit */
 .suits♥︎ {
   background-color: white;
-  width: 10vh;
-  height: 18vh;
-  font-size: 3vh;
-  border-radius: 1vh;
+  width: 5vmax;
+  height: 8.2vmax;
+  font-size: 1.5vmax;
+  border-radius: 0.5vmax;
   display: flex;
   position: relative;
   color: red;
   border-color: white;
-  box-shadow: 0.1vh 0.1vh #888888;
+  box-shadow: 0.1vmax 0.1vmax #888888;
 }
 
 .suits♣︎ {
   background-color: white;
-  width: 10vh;
-  height: 18vh;
-  font-size: 3vh;
-  border-radius: 1vh;
+  width: 5vmax;
+  height: 8.2vmax;
+  font-size: 1.5vmax;
+  border-radius: 0.5vmax;
   display: flex;
   position: relative;
   color: black;
   border-color: white;
-  box-shadow: 0.1vh 0.1vh #888888;
+  box-shadow: 0.1vmax 0.1vmax #888888;
 }
 
 .suits♦︎ {
   background-color: white;
-  width: 10vh;
-  height: 18vh;
-  font-size: 3vh;
-  border-radius: 1vh;
+  width: 5vmax;
+  height: 8.2vmax;
+  font-size: 1.5vmax;
+  border-radius: 0.5vmax;
   display: flex;
   position: relative;
   color: red;
   border-color: white;
-  box-shadow: 0.1vh 0.1vh #888888;
+  box-shadow: 0.1vmax 0.1vmax #888888;
 }
 
 .suits♠︎ {
   background-color: white;
-  width: 10vh;
-  height: 18vh;
-  font-size: 3vh;
-  border-radius: 1vh;
+  width: 5vmax;
+  height: 8.2vmax;
+  font-size: 1.5vmax;
+  border-radius: 0.5vmax;
   display: flex;
   position: relative;
   color: black;
   border-color: white;
-  box-shadow: 0.1vh 0.1vh #888888;
+  box-shadow: 0.1vmax 0.1vmax #888888;
 }
 
 /* positioning for all texts and symbols on card */
 .val1 {
   position: absolute;
-  left: 0.5vh;
-  top: 0.5vh;
+  left: 0.5vmax;
+  top: 0.5vmax;
 }
 
 .val2 {
   position: absolute;
-  right: 0.5vh;
-  top: 0.5vh;
+  right: 0.5vmax;
+  top: 0.5vmax;
 }
 
 .val3 {
   position: absolute;
-  left: 0.5vh;
-  bottom: 0.5vh;
+  left: 0.5vmax;
+  bottom: 0.5vmax;
   transform: scale(-1, -1);
 }
 
 .val4 {
   position: absolute;
-  right: 0.5vh;
-  bottom: 0.5vh;
+  right: 0.5vmax;
+  bottom: 0.5vmax;
   transform: scale(-1, -1);
 }
 
 .suit {
-  font-size: 5vh;
+  font-size: 3vmax;
   margin: auto;
 }
 
@@ -106,14 +118,50 @@ body {
       blue 4px
     ),
     repeating-linear-gradient(135deg, white, grey 3px, black 3px, black 4px);
-  width: 10vh;
-  height: 18vh;
+  width: 5vmax;
+  height: 8.2vmax;
   display: flex;
   position: relative;
   color: black;
-  box-shadow: 0.1vh 0.1vh #888888;
-  outline: 1vh solid white;
-  outline-offset: -1vh;
+  box-shadow: 0.1vmax 0.1vmax #888888;
+  outline: 0.5vmax solid white;
+  outline-offset: -0.5vmax;
   border-color: white;
-  border-radius: 1vh;
+  border-radius: 0.5vmax;
+}
+.startButton {
+    background-color: #88888800;
+    color: white;
+    border-color: white;
+    border-radius: 1vmax;
+    font-size: 2vmax;
+    display: inline-block;
+    transition-duration: 0.4s;
+}
+
+.startButton:hover {
+    background-color: rgba(0, 0, 0, 0.244);
+  }
+
+.winnerButton {
+    background-color: #88888800;
+    color: white;
+    border-color: white;
+    border-radius: 1vmax;
+    font-size: 3vmax;
+    display: inline-block;
+    transition-duration: 0.4s;
+}
+
+.winnerButton:hover {
+    background-color: rgba(0, 0, 0, 0.244);
+  }
+
+.turns {
+    color: white;
+    font-size: 3vmax;
+    display: inline-block;
+    margin-top: 0vmax;
+    margin-bottom: 0vmax;
+    margin-left: 1vmax;
 }
