@@ -7,6 +7,8 @@
 import { useState, useEffect, useRef } from "react";
 import Card from "./components/Card";
 import "./App.css";
+import Confetti from 'react-confetti';
+import useWindowSize from "./hooks/useWindowSize";
 
 //activated when shuffle button is clicked
 function shuffle(arr) {
@@ -145,6 +147,9 @@ export default function App() {
     }, 5000);
   }
 
+  const size = useWindowSize();
+
+
   //we feed the cardDeck array of values to the card component to render a deck of cards on screen.
   //can either show face or be blank dependent on found value.
   //handleClick function on each card for the selectCard function used during development
@@ -152,16 +157,6 @@ export default function App() {
   //start button only shows until clicked
   return (
     <div className="container">
-      {showButton && (
-        <button type="button" onClick={handleStart} className='startButton'>
-          START GAME
-        </button>
-      )}
-      {score >= (cardDeckCopy.length / 2) && (
-        <button type="button" onClick={handleStart} className='winnerButton'>
-          WINNER!!! TRY AGAIN?
-        </button>
-      )}
       <h3 className="turns">Find matching numbers to win. You have used {turn} turns.</h3>
       <div className="cardContainer">
         {cardDeck.map((item) => (
@@ -173,6 +168,22 @@ export default function App() {
             found={item.found}
           />
         ))}
+        {showButton && (
+        <button type="button" onClick={handleStart} className='startButton'>
+          START GAME
+        </button>
+      )}
+      {score >= (cardDeckCopy.length / 2) && (
+        <>
+        <Confetti
+        width={size.width}
+        height={size.height}
+      />
+        <button type="button" onClick={handleStart} className='winnerButton'>
+          WINNER!!! TRY AGAIN?
+        </button>
+        </>
+      )}
       </div>
       {/* <button type="button" onClick={handleShuffleClick}>
         shuffle
