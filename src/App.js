@@ -157,7 +157,7 @@ export default function App() {
   //start button only shows until clicked
   return (
     <div className="container">
-      <h3 className="turns">Find matching numbers to win. You have used {turn} turns.</h3>
+      <h3 className="turns">Find matching numbers to win. Turns used: {turn}</h3>
       <div className="cardContainer">
         {cardDeck.map((item) => (
           <Card

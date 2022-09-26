@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 body {
   background-color: rgb(3, 81, 3);
   color: black;
+  font-family: "Josefin Sans";
 }
 
 .container {
@@ -76,18 +79,21 @@ body {
 
 /* positioning for all texts and symbols on card */
 .val1 {
+  font-size: 1.3vmax;
   position: absolute;
   left: 0.5vmax;
   top: 0.5vmax;
 }
 
 .val2 {
+  font-size: 1.3vmax;
   position: absolute;
   right: 0.5vmax;
   top: 0.5vmax;
 }
 
 .val3 {
+  font-size: 1.3vmax;
   position: absolute;
   left: 0.5vmax;
   bottom: 0.5vmax;
@@ -95,6 +101,7 @@ body {
 }
 
 .val4 {
+  font-size: 1.3vmax;
   position: absolute;
   right: 0.5vmax;
   bottom: 0.5vmax;
@@ -127,32 +134,38 @@ body {
   border-color: white;
   border-radius: 0.5vmax;
 }
+
+.blank:hover {
+  transform: scale(1.03);
+}
+
 .startButton {
-    font-weight: bold;
-    color: grey;
-    animation: bouncy 5s infinite linear;
+  font-weight: bold;
+  animation: bouncy 5s infinite linear;
   position: fixed;
   background-color: transparent;
   top: 50%;
   left: 50%;
   font-size: 8vmax;
-  border-radius: 5vmax;
-  border-color: transparent;
-  width: 54vmax;
+  width: 58vmax;
   height: 10vmax;
   margin-top: -5vmax;
-  margin-left: -27vmax;
+  margin-left: -28vmax;
+  opacity: 0.8;
+  border-color: transparent;
+  color: red;
+  font-family: "Josefin Sans";
 }
 
 .startButton:hover {
-    transform: rotate(3deg);
+  transform: scale(1.03);
   animation-play-state: paused;
 }
 
 .winnerButton {
-    font-weight: bold;
-    animation: bouncy 5s infinite linear;
-    color: grey;
+  font-weight: bold;
+  animation: bouncy 5s infinite linear;
+  color: grey;
   position: fixed;
   background-color: transparent;
   top: 50%;
@@ -164,16 +177,34 @@ body {
   height: 10vmax;
   margin-top: -5vmax;
   margin-left: -48vmax;
+  font-family: "Josefin Sans";
+  opacity: 0.8;
+  color: red;
 }
 @keyframes bouncy {
-    0%{top:50%; color: blue;}
-    40%{top:50%}
-    43%{top:46%}
-    46%{top:50%}
-    48%{top:48%}
-    50%{top:50%; color: blueviolet;}
-    100%{top:50%; color: blue;}
-    }
+  0% {
+    top: 50%;
+  }
+  40% {
+    top: 50%;
+  }
+  43% {
+    top: 46%;
+  }
+  46% {
+    top: 50%;
+  }
+  48% {
+    top: 48%;
+  }
+  50% {
+    top: 50%;
+    color: black;
+  }
+  100% {
+    top: 50%;
+  }
+}
 
 .winnerButton:hover {
   animation-play-state: paused;
