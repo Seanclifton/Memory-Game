@@ -6,10 +6,6 @@ body {
   font-family: "Josefin Sans";
 }
 
-.container {
-  /* margin: auto; */
-}
-
 @media (orientation: portrait) {
   .container {
     transform: rotate(-90deg);
@@ -24,120 +20,7 @@ body {
   grid-template-columns: repeat(13, 1fr);
 }
 
-/* sets card color based on suit */
-.suits♥︎ {
-  background-color: white;
-  width: 5vmax;
-  height: 8.2vmax;
-  font-size: 1.5vmax;
-  border-radius: 0.5vmax;
-  display: flex;
-  position: relative;
-  color: red;
-  border-color: white;
-  box-shadow: 0.1vmax 0.1vmax #888888;
-}
 
-.suits♣︎ {
-  background-color: white;
-  width: 5vmax;
-  height: 8.2vmax;
-  font-size: 1.5vmax;
-  border-radius: 0.5vmax;
-  display: flex;
-  position: relative;
-  color: black;
-  border-color: white;
-  box-shadow: 0.1vmax 0.1vmax #888888;
-}
-
-.suits♦︎ {
-  background-color: white;
-  width: 5vmax;
-  height: 8.2vmax;
-  font-size: 1.5vmax;
-  border-radius: 0.5vmax;
-  display: flex;
-  position: relative;
-  color: red;
-  border-color: white;
-  box-shadow: 0.1vmax 0.1vmax #888888;
-}
-
-.suits♠︎ {
-  background-color: white;
-  width: 5vmax;
-  height: 8.2vmax;
-  font-size: 1.5vmax;
-  border-radius: 0.5vmax;
-  display: flex;
-  position: relative;
-  color: black;
-  border-color: white;
-  box-shadow: 0.1vmax 0.1vmax #888888;
-}
-
-/* positioning for all texts and symbols on card */
-.val1 {
-  font-size: 1.3vmax;
-  position: absolute;
-  left: 0.5vmax;
-  top: 0.5vmax;
-}
-
-.val2 {
-  font-size: 1.3vmax;
-  position: absolute;
-  right: 0.5vmax;
-  top: 0.5vmax;
-}
-
-.val3 {
-  font-size: 1.3vmax;
-  position: absolute;
-  left: 0.5vmax;
-  bottom: 0.5vmax;
-  transform: scale(-1, -1);
-}
-
-.val4 {
-  font-size: 1.3vmax;
-  position: absolute;
-  right: 0.5vmax;
-  bottom: 0.5vmax;
-  transform: scale(-1, -1);
-}
-
-.suit {
-  font-size: 3vmax;
-  margin: auto;
-}
-
-/* styling for blank faced card */
-.blank {
-  background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 3px,
-      black 3px,
-      blue 4px
-    ),
-    repeating-linear-gradient(135deg, white, grey 3px, black 3px, black 4px);
-  width: 5vmax;
-  height: 8.2vmax;
-  display: flex;
-  position: relative;
-  color: black;
-  box-shadow: 0.1vmax 0.1vmax #888888;
-  outline: 0.5vmax solid white;
-  outline-offset: -0.5vmax;
-  border-color: white;
-  border-radius: 0.5vmax;
-}
-
-.blank:hover {
-  transform: scale(1.03);
-}
 
 .startButton {
   font-weight: bold;
@@ -165,7 +48,6 @@ body {
 .winnerButton {
   font-weight: bold;
   animation: bouncy 5s infinite linear;
-  color: grey;
   position: fixed;
   background-color: transparent;
   top: 50%;
@@ -208,11 +90,11 @@ body {
 
 .winnerButton:hover {
   animation-play-state: paused;
-  transform: rotate(3deg);
+  transform: scale(1.03);
 }
 
 .turns {
-  color: rgb(230, 230, 230);
+  color: rgb(201, 223, 201);
   font-size: 3vmax;
   margin-top: 0vmax;
   margin-bottom: 0vmax;

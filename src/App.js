@@ -1,14 +1,12 @@
-//put in css grid and make responsive
-//make start buton and winner button look better
-//add fireworks at end
-//add card flip animation
+//add shuffle animation
 //add a backend
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import Card from "./components/Card";
 import "./App.css";
 import Confetti from 'react-confetti';
 import useWindowSize from "./hooks/useWindowSize";
+
 
 //activated when shuffle button is clicked
 function shuffle(arr) {
