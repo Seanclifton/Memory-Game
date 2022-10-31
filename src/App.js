@@ -168,7 +168,7 @@ export default function App() {
         ))}
         {showButton && (
         <button type="button" onClick={handleStart} className='startButton'>
-          START GAME
+          START GAME!
         </button>
       )}
       {score >= (cardDeckCopy.length / 2) && (
